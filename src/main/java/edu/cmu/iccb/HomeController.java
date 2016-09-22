@@ -1,6 +1,8 @@
 package edu.cmu.iccb;
 
-
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +59,16 @@ public class HomeController {
     public String loginForm(Model model, RedirectAttributes redirectAttributes) {   
         return "login";
     }
+
+ /*  @RequestMapping(method = RequestMethod.GET, value = "/github/success")
+public String githubLoginSuccess(RedirectAttributes redirectAttributes,
+                       @CookieValue(value = "JSESSIONID") String accessToken) {
+    
+    PreAuthenticatedAuthenticationToken auth = 
+            new PreAuthenticatedAuthenticationToken("github", accessToken, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+        
+    SecurityContextHolder.getContext().setAuthentication(auth);
+          
+    return "redirect:/images";
+}*/
 }

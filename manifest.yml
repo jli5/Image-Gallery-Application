@@ -1,4 +1,4 @@
 ---
 applications:
-- name: image-gallery-0.1.0
-  path: ./build/libs
+- name: image111
+  path: /Users/jingli/Documents/'CC for biz'/Image-Gallery-Application/build/libs
