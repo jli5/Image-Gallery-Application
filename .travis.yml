@@ -1,4 +1,6 @@
+language: java
 sudo: required
+edge: true
 deploy:
   provider: cloudfoundry
   api: https://api.run.pivotal.io
