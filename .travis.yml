@@ -1,0 +1,10 @@
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: jli5@andrew.cmu.edu
+  password:
+    secure: gKfB4V3BquR2/7CLq4KzUZBTnfH4zKMtyAVvPaZvioT5pgHtGwMuaKhm3lfPUkWd2QbiR6lTpQoJwNrPU3NB6fltQG1G4ANaw6VMlzThMUH6xBnAxnlnYzjpRE1w2Ntw9C5153ogBVp4Og2v35tCrdtQz3qOIZRcAhJzlbHOBdciNtnO2EwqvoykdI5wwxzn874o2qIUa6J7GI+KgyCgDUiW4N6bCjYZyCqaiYNeBzQS1Nk3L7AF7m1Tot4bWjTTXdsiCK3i6amLPk8wX0MgW+FAG5DA07k+KEbnyW/BVicq9KSUSQ61jJCLDYVyWx123FhKvdJg5iYeWqXhu7yjxsb/igxgnUCw9KZQ1tj6WhpGmqVRRyhi40GnJIFYHIci0zPuvsn8ddvELC0vzqd9JnEP423omNAwi8exX0gkFVIId6XxzeiR7p8qBbQvUcFSDV2cMelvCPlxx3iZ+9ldvhU35AacXmKEGcnNeNRr+CbwAArx1HgAVYXtZNwiKh/3JkDZSCz3zJPByHLZSs2T8M1W4yjUtBjScJc8ipd4jtA2O4KseT7aLyIqiO037d3L7zNBAjjHNeZjOoMeD5knShkODqwsfVZugoKaeSJfQI5CTlow/rafJEWALBOgS+XUthbDGnOhy8Katu2UtOZrR/9sNvjE7hL5aebVgPrkfoA=
+  organization: myawesomeorganization
+  space: staging
+  on:
+    repo: jli5/Image-Gallery-Application

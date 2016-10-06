@@ -19,8 +19,9 @@ public class Application extends WebSecurityConfigurerAdapter {
       http
         .antMatcher("/**")
         .authorizeRequests()
-          .antMatchers("/", "/github/success", "/css", "/js", "/fonts").permitAll()
+          .antMatchers("/", "/github/success", "/images","/css", "/js", "/fonts").permitAll()
         .anyRequest().authenticated();
     }
 }
+
 

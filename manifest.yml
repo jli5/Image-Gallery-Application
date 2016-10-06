@@ -1,4 +1,3 @@
 ---
 applications:
-- name: imagegallery2
-  path: /Users/jingli/Documents/'CC for biz'/Image-Gallery-Application/build/libs
+- name: imagegallery3

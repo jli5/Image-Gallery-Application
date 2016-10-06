@@ -1,6 +1,5 @@
 package edu.cmu.iccb;
 
-
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
@@ -22,17 +21,17 @@ import edu.cmu.iccb.services.ImageService;
 
 @Controller
 public class HomeController {
-	
+    
     private ImageService imageService;
     
     @Autowired
-	public void setImageService(ImageService imageService) {
-		this.imageService = imageService;
-	}
+    public void setImageService(ImageService imageService) {
+        this.imageService = imageService;
+    }
 
     public ImageService getImageService() {
-		return imageService;
-	}
+        return imageService;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/images")
     public String provideUploadInfo(Model model, RedirectAttributes redirectAttributes) {
@@ -47,8 +46,8 @@ public class HomeController {
 
         String name = file.getOriginalFilename();
 
-        try {        	
-        	imageService.saveImage(name, file.getInputStream());           
+        try {           
+            imageService.saveImage(name, file.getInputStream());           
         }
         catch (Exception e) {
             redirectAttributes.addFlashAttribute("message", name + " failed to upload");
@@ -59,28 +58,28 @@ public class HomeController {
     
     
     @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String homePage() {    	
+    public String homePage() {      
         return "login";
     }
     
 
     @RequestMapping(method = RequestMethod.GET, value = "/github/success")
     public String githubSuccess(RedirectAttributes redirectAttributes,
-    					   @CookieValue(value = "JSESSIONID") String accessToken) {
-    	
-    	PreAuthenticatedAuthenticationToken auth = 
+                           @CookieValue(value = "JSESSIONID") String accessToken) {
+        
+        PreAuthenticatedAuthenticationToken auth = 
                 new PreAuthenticatedAuthenticationToken("github", accessToken, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
             
         SecurityContextHolder.getContext().setAuthentication(auth);
               
-    	return "redirect:/images";
+        return "redirect:/images";
     }
     
     @RequestMapping(method = RequestMethod.GET, value = "/github/login")
     public String githubLogin(RedirectAttributes redirectAttributes,
-    					   @CookieValue(value = "JSESSIONID") String accessToken) {
-    		
-    	// If we actuall make it to this code, we have been authenticated so redirect to images
-    	return "redirect:/images";
+                           @CookieValue(value = "JSESSIONID") String accessToken) {
+            
+        // If we actuall make it to this code, we have been authenticated so redirect to images
+        return "redirect:/images";
     }
 }

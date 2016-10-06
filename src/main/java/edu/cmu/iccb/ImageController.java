@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 import edu.cmu.iccb.services.ImageService;
 
@@ -20,16 +21,16 @@ public class ImageController {
     private ImageService imageService;
     
     @Autowired
-	public void setImageService(ImageService imageService) {
-		this.imageService = imageService;
-	}
+    public void setImageService(ImageService imageService) {
+        this.imageService = imageService;
+    }
 
     public ImageService getImageService() {
-		return imageService;
-	}
+        return imageService;
+    }
 
 
-	@RequestMapping("/uploaded/image/{id}")
+    @RequestMapping("/uploaded/image/{id}")
     public ResponseEntity<byte[]> getFullImage(@PathVariable String id) throws IOException {
 
         byte[] image = imageService.getImageData(id);
@@ -40,7 +41,7 @@ public class ImageController {
         return new ResponseEntity<byte[]>(image, headers, HttpStatus.OK);
     }
     
-	@RequestMapping("/uploaded/thumbnail/{id}")
+    @RequestMapping("/uploaded/thumbnail/{id}")
     public ResponseEntity<byte[]> getThumbnail(@PathVariable String id) throws IOException {
 
         byte[] image = imageService.getThumbnailData(id);
