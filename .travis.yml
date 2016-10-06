@@ -1,16 +1,9 @@
 language: java
 jdk:
-<<<<<<< HEAD
 - oraclejdk8
 sudo: required
 before_install:
-- chmod +x gradlew
-=======
-  - oraclejdk8
-sudo: required
-before_install:
  - chmod +x gradlew
->>>>>>> 29074300983565a6338c41703dc2b4bbd1002b5a
 edge: true
 deploy:
   provider: cloudfoundry
