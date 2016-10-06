@@ -1,3 +1,4 @@
 ---
 applications:
 - name: imagegallery3
+  path: ./build/libs/image-gallery-0.1.0.jar
